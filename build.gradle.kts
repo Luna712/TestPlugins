@@ -89,28 +89,3 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
-
-tasks.register<Copy>("includeViewBindingInDex") {
-	group = "build"
-	description = "Ensures ViewBinding-generated classes are included in dex."
-
-	val viewBindingDir = layout.buildDirectory.dir("generated/source/viewBinding/debug")
-	val kotlinOutput = layout.buildDirectory.dir("tmp/kotlin-classes/debug")
-	val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput")
-
-	from(viewBindingDir)
-	from(kotlinOutput)
-	into(dexInputDir)
-
-	doLast {
-		println("Included ViewBinding classes from: ${viewBindingDir.get().asFile}")
-	}
-}
-
-tasks.named("compileDex") {
-	dependsOn("includeViewBindingInDex")
-	doFirst {
-		val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput").get().asFile
-		inputs.dir(dexInputDir)
-	}
-}
