@@ -14,7 +14,7 @@ import com.lagradost.cloudstream3.ui.BaseFragment
 import com.lagradost.cloudstream3.utils.UIHelper.colorFromAttribute
 
 /**
- * A simple [Fragment] subclass.
+ * A simple [BaseBottomSheetDialogFragment] subclass.
  */
 class BlankFragment(private val plugin: ExamplePlugin) : BaseBottomSheetDialogFragment<FragmentBlankBinding>(
     BaseFragment.BindingCreator.Inflate(FragmentBlankBinding::inflate)
