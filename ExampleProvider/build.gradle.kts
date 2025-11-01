@@ -1,6 +1,6 @@
 dependencies {
-    implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.google.android.material:material:1.13.0")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 }
 
 // Use an integer for version numbers
@@ -35,4 +35,27 @@ android {
         buildConfig = true
         viewBinding = true
     }
+}
+
+tasks.register<Copy>("includeViewBindingInDex") {
+	group = "build"
+	description = "Ensures ViewBinding-generated classes are included in dex."
+
+    dependsOn("compileDebugKotlin")
+
+	val viewBindingDir = layout.buildDirectory.dir("generated/data_binding_base_class_source_out/debug/out")
+	val dexInputDir = layout.buildDirectory.dir("../src/main/java")
+
+	from(viewBindingDir)
+	into(dexInputDir)
+
+	doLast {
+		println("Included ViewBinding classes from: ${viewBindingDir.get().asFile}, to: ${dexInputDir.get().asFile}")
+	}
+}
+
+tasks.named("compileDex") {
+	dependsOn("includeViewBindingInDex")
+	// val dexInputDir = layout.buildDirectory.dir("intermediates/classes.dex").get().asFile
+	// inputs.dir(dexInputDir)
 }
