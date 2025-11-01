@@ -1,0 +1,22 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/Luna712/TestPlugins/builds/ExampleProvider.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "ExampleProvider",
+        "internalName": "ExampleProvider",
+        "authors": [
+            "Cloudburst",
+            "Luna712"
+        ],
+        "description": "Lorem ipsum",
+        "fileSize": 7373,
+        "repositoryUrl": "https://github.com/Luna712/TestPlugins",
+        "language": "en",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png",
+        "apiVersion": 1
+    }
+]
