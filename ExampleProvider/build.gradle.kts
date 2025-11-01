@@ -47,7 +47,6 @@ tasks.register<Copy>("includeViewBindingInDex") {
 	val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput")
 
 	from(viewBindingDir)
-	from(kotlinOutput)
 	into(dexInputDir)
 
 	doLast {
