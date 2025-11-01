@@ -44,10 +44,6 @@ subprojects {
     android {
         namespace = "com.example"
 
-        viewBinding {
-            enable = true
-        }
-
         defaultConfig {
             minSdk = 21
             compileSdkVersion(36)
