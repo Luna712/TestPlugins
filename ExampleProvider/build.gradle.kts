@@ -58,8 +58,6 @@ tasks.register<Copy>("includeViewBindingInDex") {
 
 tasks.named("compileDex") {
 	dependsOn("includeViewBindingInDex")
-	doFirst {
-		val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput").get().asFile
-		inputs.dir(dexInputDir)
-	}
+	val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput").get().asFile
+	inputs.dir(dexInputDir)
 }
