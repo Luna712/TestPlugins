@@ -43,8 +43,7 @@ tasks.register<Copy>("includeViewBindingInDex") {
 
     dependsOn("compileDebugKotlin")
 
-	val viewBindingDir = layout.buildDirectory.dir("generated/source/viewBinding/debug")
-	val kotlinOutput = layout.buildDirectory.dir("tmp/kotlin-classes/debug")
+	val viewBindingDir = layout.buildDirectory.dir("generated/data_binding_base_class_source_out/debug/out")
 	val dexInputDir = layout.buildDirectory.dir("intermediates/dexInput")
 
 	from(viewBindingDir)
