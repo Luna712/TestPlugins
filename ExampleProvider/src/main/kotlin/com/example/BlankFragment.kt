@@ -7,8 +7,8 @@ import android.os.Build
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.TextViewCompat
+import com.example.databinding.FragmentBlankBinding
 import com.lagradost.cloudstream3.R
-import com.lagradost.cloudstream3.databinding.FragmentBlankBinding
 import com.lagradost.cloudstream3.ui.BaseBottomSheetDialogFragment
 import com.lagradost.cloudstream3.ui.BaseFragment
 import com.lagradost.cloudstream3.utils.UIHelper.colorFromAttribute
