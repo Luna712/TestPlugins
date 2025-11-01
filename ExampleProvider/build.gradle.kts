@@ -31,10 +31,6 @@ cloudstream {
 }
 
 android {
-    viewBinding {
-        enable = true
-    }
-
     buildFeatures {
         buildConfig = true
         viewBinding = true
