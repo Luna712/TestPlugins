@@ -44,7 +44,7 @@ tasks.register<Copy>("includeViewBindingInDex") {
     dependsOn("compileDebugKotlin")
 
 	val viewBindingDir = layout.buildDirectory.dir("generated/data_binding_base_class_source_out/debug/out")
-	val dexInputDir = layout.buildDirectory.dir("intermediates/classes.dex")
+	val dexInputDir = layout.buildDirectory.dir("../src/main/java")
 
 	from(viewBindingDir)
 	into(dexInputDir)
@@ -56,6 +56,6 @@ tasks.register<Copy>("includeViewBindingInDex") {
 
 tasks.named("compileDex") {
 	dependsOn("includeViewBindingInDex")
-	val dexInputDir = layout.buildDirectory.dir("intermediates/classes.dex").get().asFile
-	inputs.dir(dexInputDir)
+	// val dexInputDir = layout.buildDirectory.dir("intermediates/classes.dex").get().asFile
+	// inputs.dir(dexInputDir)
 }
